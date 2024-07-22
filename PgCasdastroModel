@@ -1,0 +1,61 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'pg_casdastro_widget.dart' show PgCasdastroWidget;
+import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+class PgCasdastroModel extends FlutterFlowModel<PgCasdastroWidget> {
+  ///  State fields for stateful widgets in this page.
+
+  final unfocusNode = FocusNode();
+  // State field(s) for NomeUsuarioCriar widget.
+  FocusNode? nomeUsuarioCriarFocusNode;
+  TextEditingController? nomeUsuarioCriarTextController;
+  String? Function(BuildContext, String?)?
+      nomeUsuarioCriarTextControllerValidator;
+  // State field(s) for EmailUsuarioCriar widget.
+  FocusNode? emailUsuarioCriarFocusNode;
+  TextEditingController? emailUsuarioCriarTextController;
+  String? Function(BuildContext, String?)?
+      emailUsuarioCriarTextControllerValidator;
+  // State field(s) for SenhaUsuarioCriar widget.
+  FocusNode? senhaUsuarioCriarFocusNode;
+  TextEditingController? senhaUsuarioCriarTextController;
+  late bool senhaUsuarioCriarVisibility;
+  String? Function(BuildContext, String?)?
+      senhaUsuarioCriarTextControllerValidator;
+  // State field(s) for ConfirmarSenhaUsuarioCriar widget.
+  FocusNode? confirmarSenhaUsuarioCriarFocusNode;
+  TextEditingController? confirmarSenhaUsuarioCriarTextController;
+  late bool confirmarSenhaUsuarioCriarVisibility;
+  String? Function(BuildContext, String?)?
+      confirmarSenhaUsuarioCriarTextControllerValidator;
+
+  @override
+  void initState(BuildContext context) {
+    senhaUsuarioCriarVisibility = false;
+    confirmarSenhaUsuarioCriarVisibility = false;
+  }
+
+  @override
+  void dispose() {
+    unfocusNode.dispose();
+    nomeUsuarioCriarFocusNode?.dispose();
+    nomeUsuarioCriarTextController?.dispose();
+
+    emailUsuarioCriarFocusNode?.dispose();
+    emailUsuarioCriarTextController?.dispose();
+
+    senhaUsuarioCriarFocusNode?.dispose();
+    senhaUsuarioCriarTextController?.dispose();
+
+    confirmarSenhaUsuarioCriarFocusNode?.dispose();
+    confirmarSenhaUsuarioCriarTextController?.dispose();
+  }
+}
